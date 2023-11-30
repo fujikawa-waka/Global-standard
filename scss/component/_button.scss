@@ -1,0 +1,239 @@
+@use "../mixin/mixin" as *;
+
+//header-button
+.c-gnav-btn {
+    @include mq('pc') {
+        font-size: 14px;
+        width: 200px;
+        text-align: center;
+        margin-right: 20px;
+    }
+}
+
+.c-btn {
+
+    &--primary {
+        padding: 20px;
+        transition: all .3s;
+        border: 2px solid $sub-color;
+
+        @include mq('pc') {
+            border: 2px solid $base-color;
+
+            &:hover {
+                border: 2px solid $base-color;
+                background: $base-color;
+                color: $font-color-white;
+
+            }
+        }
+    }
+
+    &--secondary {
+        padding: 22px;
+        transition: all .3s;
+        background-color: #fff;
+        color: $font-color-primary;
+
+        @include mq('pc') {
+            color: $font-color-white;
+            background-color: $base-color;
+
+            &:hover {
+                background-color: #002A52;
+
+            }
+
+        }
+
+    }
+}
+
+//main-button
+.c-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $font-color-primary;
+
+    @include mq('sp') {
+        display: block;
+    }
+
+}
+
+.heading__en {
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+
+    @include mq('pc') {
+        font-size: 100px;
+    }
+}
+
+.c-heading-link {
+    @include mq('sp') {
+        display: none;
+    }
+
+    position: relative;
+    font-size: 30px;
+    display: block;
+    font-style: italic;
+
+    &--sp {
+        display: none;
+
+        @include mq('sp') {
+            margin-top: 20px;
+            display: block;
+            font-size: 20px;
+            font-style: italic;
+            text-align: right;
+            position: relative;
+        }
+
+    }
+
+}
+
+.c-heading__link-text {
+    padding-right: 100px;
+
+    @include mq('pc') {
+        padding-right: 40px;
+        display: inline-block;
+    }
+}
+
+.c-heading__link-arrow {
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+
+    @include mq('pc') {
+        top: 50%;
+        right: -40px;
+    }
+    @include mq('tab') {
+        top: 50%;
+        right: 0;
+    }
+    &::before,
+    &--sp {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 7px;
+        transform: skew(45deg);
+        border-right: 3px solid;
+        border-bottom: 2px solid;
+        transition: .3s;
+        top: 50%;
+        right: 0;
+    }
+
+    &--sp {
+        right: 30px;
+    }
+}
+
+.u-color-white {
+    color: #fff;
+}
+
+.c-heading__link-circle {
+    border: 2px solid $btn-third-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+
+    @include mq('pc') {
+        top: 0;
+        right: -70px;
+    }
+    @include mq('tab') {
+        top: 10px;
+        right: 0;
+    }
+    &--sp {
+        @extend .c-heading__link-circle;
+        right: 10px;
+        top: 0;
+
+        @include mq('pc') {
+            display: none;
+        }
+    }
+}
+
+.c-heading-link {
+    &:hover {
+        .c-heading__link-arrow::before {
+            right: -20px;
+            width: 70px;
+        }
+    }
+}
+
+//footer-button
+.c-button-third {
+    border: 2px solid $btn-third-color;
+    color: $btn-third-color;
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+    margin: 0 auto;
+    transition: all .3s;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background: url(../img/icon-arrow-right01-1.png)no-repeat center center;
+        background-size: 100% auto;
+        width: 20px;
+        height: 20px;
+
+        @include mq('pc') {
+            right: 50px;
+        }
+
+    }
+
+    &:hover::after {
+        background: url(../img/icon-arrow-blue.png)no-repeat center center;
+        background-size: 100% auto;
+        width: 20px;
+        height: 20px;
+
+        @include mq('pc') {
+            right: 30px;
+            transition: all .3s;
+        }
+    }
+
+    &:hover {
+        color: #222;
+        background: $btn-third-color;
+    }
+}
+
+.footer-page_top {
+    padding: 0 20px 40px 0;
+}
+
+.footer-button-pageTop {
+    display: block;
+    background: url(../img/icon-top.png)no-repeat left center;
+    background-size: 100% auto;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+}

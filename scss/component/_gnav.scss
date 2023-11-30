@@ -1,0 +1,333 @@
+@use "../mixin/mixin" as *;
+
+//pc
+@include mq('pc') {
+    .p-drawer {
+        display: none;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .c-gnav_list {
+        display: flex;
+        align-items: center;
+    }
+
+    .c-gnav__item {
+        position: relative;
+        padding: 0 20px;
+
+        &:not(:first-child)::before {
+            content: "/";
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    }
+
+    .c-hamburger {
+        display: none;
+    }
+}
+
+//sp
+@include mq('sp') {
+
+    .p-header-gnav {
+        display: none;
+    }
+
+    .c-drawer__nav {
+        position: fixed;
+        z-index: 999;
+        top: -120%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        background: $base-color;
+        transition: all 0.6s;
+        color: #fff;
+
+        &.active {
+            top: 0;
+        }
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    .hamburger-buttons {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        z-index: 999;
+    }
+
+    .hamburger-btn {
+        cursor: pointer;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 20px;
+
+        span {
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            background-color: $base-color;
+            position: absolute;
+            transition: all .3s;
+            z-index: 999;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 8px;
+            }
+
+
+            &:nth-child(3) {
+                top: 16px;
+            }
+        }
+
+        &.open span:nth-child(1) {
+            top: 0;
+            transform: translateY(6px) rotate(-45deg);
+            background-color: $sub-color;
+        }
+
+        &.open span:nth-child(2) {
+            opacity: 0;
+
+        }
+
+
+        &.open span:nth-child(3) {
+            top: 0px;
+            transform: translateY(6px) rotate(45deg);
+            background-color: $sub-color;
+        }
+
+    }
+
+    .c-drawer_list {
+        margin-top: 50px;
+    }
+
+    .c-drawer__item {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .c-drawer-btn {
+        max-width: 50%;
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+@include mq('tab') {
+    .p-header-gnav {
+        display: none;
+    }
+
+    .c-drawer__nav {
+        position: fixed;
+        z-index: 999;
+        top: -120%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        background: $base-color;
+        transition: all 0.6s;
+        color: #fff;
+
+        &.active {
+            top: 0;
+        }
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    .hamburger-btn {
+        cursor: pointer;
+        position: relative;
+        width: 27px;
+        height: 20px;
+
+        span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $base-color;
+            position: absolute;
+            transition: all .3s;
+
+            z-index: 999;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 8px;
+            }
+
+
+            &:nth-child(3) {
+                top: 16px;
+            }
+        }
+
+        &.open span:nth-child(1) {
+            top: 0;
+            transform: translateY(6px) rotate(-45deg);
+            background-color: $sub-color;
+        }
+
+        &.open span:nth-child(2) {
+            opacity: 0;
+
+        }
+
+
+        &.open span:nth-child(3) {
+            top: 0px;
+            transform: translateY(6px) rotate(45deg);
+            background-color: $sub-color;
+        }
+
+    }
+
+    .c-drawer_list {
+        margin-top: 50px;
+    }
+
+    .c-drawer__item {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .c-drawer-btn {
+        max-width: 50%;
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+@include mq('lg') {
+    .p-header-gnav {
+        display: none;
+    }
+
+    .c-drawer__nav {
+        position: fixed;
+        z-index: 999;
+        top: -120%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        background: $base-color;
+        transition: all 0.6s;
+        color: #fff;
+
+        &.active {
+            top: 0;
+        }
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    .hamburger-btn {
+        cursor: pointer;
+        position: relative;
+        width: 27px;
+        height: 20px;
+
+        span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $base-color;
+            position: absolute;
+            transition: all .3s;
+
+            z-index: 999;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 8px;
+            }
+
+
+            &:nth-child(3) {
+                top: 16px;
+            }
+        }
+
+        &.open span:nth-child(1) {
+            top: 0;
+            transform: translateY(6px) rotate(-45deg);
+            background-color: $sub-color;
+        }
+
+        &.open span:nth-child(2) {
+            opacity: 0;
+
+        }
+
+
+        &.open span:nth-child(3) {
+            top: 0px;
+            transform: translateY(6px) rotate(45deg);
+            background-color: $sub-color;
+        }
+
+    }
+
+    .c-drawer_list {
+        margin-top: 50px;
+    }
+
+    .c-drawer__item {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .c-drawer-btn {
+        max-width: 50%;
+        margin: 10px auto;
+        text-align: center;
+    }
+}

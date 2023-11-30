@@ -1,0 +1,37 @@
+@use "../mixin/mixin" as *;
+
+//header 共通パーツ
+.l-header {
+
+    @include mq('pc') {
+        padding: 20px;
+    }
+
+}
+
+.header-company-name {
+    max-width: 200px;
+
+    @include mq('pc') {
+        max-width: 280px;
+        height: auto;
+    }
+}
+
+.p-header-gnav {
+    @include mq('pc') {
+        display: flex;
+        margin-left: auto;
+        align-items: center;
+    }
+
+}
+
+.p-header-left {
+    display: none;
+
+    @include mq('pc') {
+        display: flex;
+        margin-left: auto;
+    }
+}

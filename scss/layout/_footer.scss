@@ -1,0 +1,38 @@
+@use "../mixin/mixin" as *;
+
+//footer 共通パーツ
+
+.l-footer {}
+
+.l-footer-body {
+    background: #1A1A1A;
+    color: $font-color-white;
+    text-align: center;
+    padding-top: 65px;
+
+    @include mq('pc'){
+        padding-top: 110px;
+    }
+    small{
+        display: inline-block;
+        margin: 40px 0 10px;
+    }
+
+}
+
+.l-footer-logo {
+    a {
+        font-size: 2.5rem;
+        font-style: italic;
+        font-weight: bold;
+
+        @include mq('pc') {
+            font-size: 3.25rem;
+        }
+    }
+}
+
+.p-footer-info {
+    padding-top: 23px;
+    font-size: 14px;
+}

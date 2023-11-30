@@ -1,0 +1,48 @@
+@use "../mixin/mixin" as *;
+
+body {
+    background-size: #fff;
+    font-family: $font-ja;
+    color: $font-color-black;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-wrap:break-word;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    display: block;
+    touch-action: none;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.l-inner {
+    max-width: 100%;
+    padding: 0 20px;
+
+    @include mq('pc') {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 50px;
+        margin: 0 auto;
+
+    }
+
+    &--narrow {
+        max-width: 848px;
+        width: 100%;
+        padding: 0 50px;
+        margin: 0 auto;
+
+        @include mq('sp'){
+            padding: 0 20px;
+        }
+    }
+
+}

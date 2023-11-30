@@ -1,0 +1,63 @@
+@use "../mixin/mixin" as *;
+
+.c-mv-head {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.c-mv-head__img {
+    position: relative;
+    background: url(../img/mv-company_pc.jpg) no-repeat center / cover;
+    display: block;
+    width: 100%;
+    height: 250px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 360px;
+        height: 250px;
+        background: url(/img/lower-mv-decoration_pc.png) no-repeat center / cover;
+
+        @include mq('sp') {
+            background: url(/img/lower-mv-decoration_sp.png) no-repeat center / cover;
+            width: 170px;
+            height: 250px;
+        }
+    }
+}
+
+.c-mv-head__title {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    color: $font-color-primary;
+
+    @include mq('sp') {
+        left: 30px;
+    }
+}
+
+.c-mv-head__title-en {
+    background-color: $sub-color;
+    font-size: 4em;
+    font-family: $font-en;
+    font-weight: bold;
+    font-style: italic;
+
+    @include mq('sp') {
+        font-size: 2em;
+    }
+}
+
+.c-mv-head__title-ja {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    background-color: $sub-color;
+
+}

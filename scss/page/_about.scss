@@ -1,0 +1,110 @@
+@use "../mixin/mixin" as *;
+
+.p-company-message-img {
+    &--mission {
+        background: url(/img/img-company01_pc.jpg)no-repeat center /cover;
+        padding: 10px 0 0 10px;
+        height: 350px;
+        width: 100%;
+    }
+
+    &--vision {
+        background: url(/img/img-company02_pc.jpg)no-repeat center /cover;
+        padding: 10px 0 0 10px;
+        height: 350px;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.p-company-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $font-color-white;
+    font-style: italic;
+
+    span {
+        display: block;
+        font-size: 1.2rem;
+        font-style: normal;
+    }
+}
+
+.p-company-massage__box {
+    background-color: $sub-color;
+    max-width: 680px;
+    margin: -60px auto 0;
+    padding: 20px;
+    box-shadow: 0 3px 12px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.p-company-massage-title {
+    color: $font-color-primary;
+    text-align: center;
+}
+
+.p-company-profile {
+    background: url(/img/bg-case.jpg) no-repeat center / cover;
+    width: 100%;
+    padding: 50px;
+    margin: 50px 0;
+
+    @include mq('sp') {
+        padding: 50px 0;
+    }
+}
+
+.p-company-profile-box {
+    background-color: $sub-color;
+    padding: 40px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include mq('sp') {
+        padding: 30px 20px;
+    }
+
+    h3 {
+        font-weight: 700;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+}
+
+.p-company-profile-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    @include mq('sp') {
+        font-size: 14px;
+    }
+
+    dt {
+        width: 30%;
+        border-top: 2px solid $base-color;
+        display: flex;
+        align-items: center;
+        padding: 20px 0 20px 20px;
+
+        @include mq('sp'){
+            padding: 20px 0;
+        }
+
+    }
+
+    dd {
+        width: 70%;
+        border-top: 2px solid rgba(#888, .3);
+        line-height: 1.5;
+        padding: 24px 0 24px 20px;
+
+        @include mq('sp') {
+            line-height: 1.4;
+            padding: 16px 0 16px 20px;
+        }
+    }
+}
